@@ -28,7 +28,7 @@ Data are documented in various sources. Here is a directory:
 
 ### [Apollo](https://github.com/mit-ccrg/apollo#data)
 
-### [Global Registry of Acute Coronary Events (GRACE)]()
+### [Global Registry of Acute Coronary Events (GRACE)](https://github.com/mit-ccrg/grace)
 
 ### [Echo](https://github.com/mit-ccrg/echo#data)
 
