@@ -52,6 +52,15 @@ This machine is for working with PHI.
 To access `anduril`, you must be onboarded at MGH (see below), have VPN access, and be added to the appropriate IRB.
 Erik Reinertsen is the admin for `anduril`. Message him on Slack with a screenshot from Insight (MGH IRB website) demonstrating you are covered by an IRB, and ask him to create an account for you.
 
+## code
+[mit-ccrg/ml4c3-mirror](https://github.com/mit-ccrg/ml4c3-mirror) is a mirror of
+[aguirre-lab/ml4c3](https://github.com/aguirre-lab/ml4c3). The latter is the source 
+repo that is under active development. We mirror this repo as a redundancy in case 
+access to the source is ever lost.
+
+The mirror is manually created and updated. To update the mirror, a user should follow 
+these instructions: [Mirroring a repository in another location](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository#mirroring-a-repository-in-another-location).
+
 ## logistics
 ### MGH onboarding
 1. Ask Collin Stultz to credential you at MGH.
