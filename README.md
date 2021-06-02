@@ -43,14 +43,27 @@ Data are documented in various sources. Here is a directory:
 ## compute
 
 ### Quanta
-Our main compute environment is the Quanta server at MIT.
-TODO
+Our main compute environment is the Quanta server at MIT. Quanta has three independent but connected servers that are used mainly for storage, training and inference
+- The storage server
+    - host name `stultzlab01.csail.mit.edu`
+    - mainly used for cold storage of large datasets
+    - 12 * 14 TB HHD for storage
+- The inference server
+    - host name `stultzlab02.csail.mit.edu`
+    - 4 * Tesla T4 16GB
+- The training server
+    - host name `stultzlab03.csail.mit.edu`
+    - used for most training tasks
+    - 8 * Tesla V100 32GB
 
+Quanta machines use CSAIL Ubuntu system, read [CSAIL TIG Page](https://tig.csail.mit.edu/) for instructions
+
+Quanta machines are mainted by the [Techsquare group](stultzlab-admin@techsquare.com) and Wangzhi. Message him on slack for questions regarding to the server.
 ### Anduril
 We have a workstation `anduril` at MGH with four Nvidia RTX 8000 GPUs.
 This machine is for working with PHI.
 To access `anduril`, you must be onboarded at MGH (see below), have VPN access, and be added to the appropriate IRB.
-Erik Reinertsen is the admin for `anduril`. Message him on Slack with a screenshot from Insight (MGH IRB website) demonstrating you are covered by an IRB, and ask him to create an account for you.
+Ridwan is the admin for `anduril`. Message him on Slack with a screenshot from Insight (MGH IRB website) demonstrating you are covered by an IRB, and ask him to create an account for you.
 
 ## code
 [mit-ccrg/ml4c3-mirror](https://github.com/mit-ccrg/ml4c3-mirror) is a mirror of
