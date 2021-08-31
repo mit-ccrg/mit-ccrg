@@ -13,7 +13,7 @@ Onboarding and operations info for Stultz Lab at MIT
 ## github
 ### getting started
 1. **NEVER push PHI to github**. Ever.
-1. If you don't have a github account, make one and ask someone to add you to our organization, [mit-ccrg](https://github.com/mit-ccrg).
+1. If you don't have a github account, make one so you can be added to our organization, [mit-ccrg](https://github.com/mit-ccrg).
 1. Only share code via github.
 1. Always document your code carefully.
 
