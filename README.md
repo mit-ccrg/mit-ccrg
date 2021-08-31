@@ -18,9 +18,10 @@ Onboarding and operations info for Stultz Lab at MIT
 1. Always document your code carefully.
 
 ## slack
-1. Communication between members of the lab occur primarily over [slack](mit-ccrg.slack.com). Contact NAME HERE about getting a slack invite if you haven't received one.
+1. Communication between members of the lab occur primarily over [slack](mit-ccrg.slack.com). Contact Daphne Schlesinger, or anyone else in the group, about getting a slack invite if you haven't received one.
 1. Feel free to make channels for your projects, etc. as necessary.
 ## meetings
+Weekly group meeting
 
 ## data
 
