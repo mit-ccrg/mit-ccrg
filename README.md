@@ -56,12 +56,12 @@ Our main compute environment is the Quanta server at MIT. Quanta has three indep
     - host name `stultzlab03.csail.mit.edu`
     - used for most training tasks
     - 8 * Tesla V100 32GB
-    
+
 The storage server is mounted to the training and inference servers at `/storage/remote/` for easy access. The home directory of the inference server (`/storage`) is also mounted to the training server.
 
 Quanta machines use CSAIL Ubuntu system, read [CSAIL TIG Page](https://tig.csail.mit.edu/operating-systems/csail-ubuntu/) for instructions
 
-Quanta machines are mainted by the [Techsquare group](stultzlab-admin@techsquare.com) and Wangzhi. Message him on slack for questions regarding to the server.
+Quanta machines are mainted by the Techsquare group (stultzlab-admin@techsquare.com) and Wangzhi. Message him on slack for questions regarding to the server.
 ### Anduril
 We have a workstation `anduril` at MGH with four Nvidia RTX 8000 GPUs.
 This machine is for working with PHI.
