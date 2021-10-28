@@ -57,9 +57,6 @@ Our main compute environment is the Quanta server at MIT. Quanta has three indep
     - used for most training tasks
     - 8 * Tesla V100 32GB
 
-
-The storage server is mounted to the training and inference servers at `/storage/remote/` for easy access.
-
 Quanta machines use CSAIL Ubuntu system, read [CSAIL TIG Page](https://tig.csail.mit.edu/operating-systems/csail-ubuntu/) for instructions
 
 Quanta machines are mainted by the Techsquare group (stultzlab-admin@techsquare.com) and Wangzhi. Message him on slack for questions regarding to the server.
@@ -70,9 +67,12 @@ The home directories `/storage/user_name` of the training and inference server a
 
 You can define your own `.bashrc` in your home directory (e.g. for aliases)
 
+There's no home directories on the storage server. The storage server is mounted to the training and inference servers at `/storage/remote/`.
+
 **Jupyter Notebook**
 
-There is an alias to run jupyter notebook on all Quanta servers: `jpt $port_num`. E.g. type `jpt 8880` will open an jupyter notebook at port 8880. You can listen to the port from your local machine with ssh
+There is an alias to run jupyter notebook on all Quanta servers: `jpt $port_num`. E.g. type `jpt 8880` will open a jupyter notebook at port 8880. You can listen to the port from your local machine with ssh
+
 `ssh -N -f -L localhost:8880:localhost:8880 user_name@host_name`.
 
 To make life easier, you can define a local alias function
