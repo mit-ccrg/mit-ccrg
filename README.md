@@ -57,7 +57,6 @@ Our main compute environment is the Quanta server at MIT. Quanta has three indep
     - used for most training tasks
     - 8 * Tesla V100 32GB
 
-The home directories `/storage/user_name` of the training and inference server are shared.
 
 The storage server is mounted to the training and inference servers at `/storage/remote/` for easy access.
 
@@ -65,8 +64,17 @@ Quanta machines use CSAIL Ubuntu system, read [CSAIL TIG Page](https://tig.csail
 
 Quanta machines are mainted by the Techsquare group (stultzlab-admin@techsquare.com) and Wangzhi. Message him on slack for questions regarding to the server.
 
+**Home Directories**
+
+The home directories `/storage/user_name` of the training and inference server are shared. (The home directory on the training server is mounted to the infernece server with NFS)
+
+You can define your own `.bashrc` in your home directory (e.g. for aliases)
+
+**Jupyter Notebook**
+
 There is an alias to run jupyter notebook on all Quanta servers: `jpt $port_num`. E.g. type `jpt 8880` will open an jupyter notebook at port 8880. You can listen to the port from your local machine with ssh
 `ssh -N -f -L localhost:8880:localhost:8880 user_name@host_name`.
+
 To make life easier, you can define a local alias function
 ```
 function jptt(){
@@ -75,6 +83,19 @@ function jptt(){
     ssh -N -f -L localhost:$2:localhost:$1 user_name@stultzlab0$3.csail.mit.edu
 }
 ```
+This trick can also be used for tensorboard.
+
+**Conda**
+
+There is a miniconda installed in `/opt/miniconda`, all users in the group `data` have write permissions to it. Enviroments created here will be accesible to all users. To check if your are in the `data` group, type `id`.
+
+You can also install your own conda in your home directory and add it to `PATH` in your `.bashrc`.
+
+**Other tips**
+
+Use `screen` or `tmux` to keep processes running after ending ssh session.
+
+`gpustat` and `htop` give gpu, cpu and memory usage.
 
 ### Anduril
 We have a workstation `anduril` at MGH with four Nvidia RTX 8000 GPUs.
