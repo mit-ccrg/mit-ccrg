@@ -75,7 +75,7 @@ There is an alias to run jupyter notebook on all Quanta servers: `jpt $port_num`
 
 `ssh -N -f -L localhost:8880:localhost:8880 user_name@host_name`.
 
-To make life easier, you can define a local alias function
+To make life easier, you can define a local alias function (syntax might be different if you're not using bash for your shell.)
 ```
 function jptt(){
     # Forwards port $1 into port $2 and listens to it, specify which server in $3
