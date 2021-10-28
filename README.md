@@ -57,11 +57,25 @@ Our main compute environment is the Quanta server at MIT. Quanta has three indep
     - used for most training tasks
     - 8 * Tesla V100 32GB
 
-The storage server is mounted to the training and inference servers at `/storage/remote/` for easy access. The home directory of the inference server (`/storage`) is also mounted to the training server.
+The home directories `/storage/user_name` of the training and inference server are shared.
+
+The storage server is mounted to the training and inference servers at `/storage/remote/` for easy access.
 
 Quanta machines use CSAIL Ubuntu system, read [CSAIL TIG Page](https://tig.csail.mit.edu/operating-systems/csail-ubuntu/) for instructions
 
 Quanta machines are mainted by the Techsquare group (stultzlab-admin@techsquare.com) and Wangzhi. Message him on slack for questions regarding to the server.
+
+There is an alias to run jupyter notebook on all Quanta servers: `jpt $port_num`. E.g. type `jpt 8880` will open an jupyter notebook at port 8880. You can listen to the port from your local machine with ssh
+`ssh -N -f -L localhost:8880:localhost:8880 user_name@host_name`.
+To make life easier, you can define a local alias function
+```
+function jptt(){
+    # Forwards port $1 into port $2 and listens to it, specify which server in $3
+    # e.g. jptt 8880 8880 3 would forward port 8880 on stultzlab03 to local port 8880
+    ssh -N -f -L localhost:$2:localhost:$1 user_name@stultzlab0$3.csail.mit.edu
+}
+```
+
 ### Anduril
 We have a workstation `anduril` at MGH with four Nvidia RTX 8000 GPUs.
 This machine is for working with PHI.
