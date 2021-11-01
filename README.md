@@ -95,6 +95,8 @@ You can also install your own conda in your home directory and add it to `PATH` 
 
 Use `screen` or `tmux` to keep processes running after ending ssh session.
 
+Use `sshfs` to mount remote filesystem to local machine. Read more about [sshfs](https://github.com/libfuse/sshfs)
+
 `gpustat` and `htop` give gpu, cpu and memory usage.
 
 ### Anduril
