@@ -136,4 +136,6 @@ these instructions: [Mirroring a repository in another location](https://docs.gi
 1. Be added to the correct IRB. *You must be on the appropriate IRB before you access data for that project!*
 
 ## office space
+Book RLE conference rooms (36-705) [here](http://calendars.mit.edu/rlerooms/calendar?view=month&roomId=22652)
+
 ## roster
