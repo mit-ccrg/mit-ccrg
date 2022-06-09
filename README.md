@@ -99,6 +99,15 @@ Use `sshfs` to mount remote filesystem to local machine. Read more about [sshfs]
 
 `gpustat` and `htop` give gpu, cpu and memory usage.
 
+**Solving Common Problems on CSAIL Server**
+* First, check if a solution can be found at the following resources: 
+    * Storage problems: 
+        * https://tig.csail.mit.edu/data-storage/nfs/faq/ 
+        * https://tig.csail.mit.edu/data-storage/afs/
+* Access problems: 
+    * https://tig.csail.mit.edu/network-wireless/ssh/ 
+* Email help@csail.mit.edu 
+
 ### Anduril
 We have a workstation `anduril` at MGH with four Nvidia RTX 8000 GPUs.
 This machine is for working with PHI.
