@@ -100,7 +100,10 @@ Use `sshfs` to mount remote filesystem to local machine. Read more about [sshfs]
 `gpustat` and `htop` give gpu, cpu and memory usage.
 
 **Solving Common Problems on CSAIL Server**
-* First, check if a solution can be found at the following resources: 
+I cannot access to server and seems like it is down:
+Whoever spotted this first should email [techsquare stultzlab admin](stultzlab-admin@techsquare.com) to reboot the server and let others know about this (message on slack cluster-issues channel)
+
+Other Problems: Check if a solution can be found at the following resources: 
     * Storage problems: 
         * https://tig.csail.mit.edu/data-storage/nfs/faq/ 
         * https://tig.csail.mit.edu/data-storage/afs/
