@@ -43,79 +43,8 @@ Data are documented in various sources. Here is a directory:
 
 ## compute
 
-### Quanta
-Our main compute environment is the Quanta server at MIT. Quanta has three independent but connected servers that are used mainly for storage, training and inference
-- The storage server
-    - host name `stultzlab01.csail.mit.edu`
-    - mainly used for cold storage of large datasets
-    - 12 * 14 TB HHD for storage
-- The inference server
-    - host name `stultzlab02.csail.mit.edu`
-    - 4 * Tesla T4 16GB
-- The training server
-    - host name `stultzlab03.csail.mit.edu`
-    - used for most training tasks
-    - 8 * Tesla V100 32GB
-
-Quanta machines use CSAIL Ubuntu system, read [CSAIL TIG Page](https://tig.csail.mit.edu/operating-systems/csail-ubuntu/) for instructions regarding [SSH Access](https://tig.csail.mit.edu/network-wireless/ssh/) and [Kerberos Authentication](https://tig.csail.mit.edu/accounts-authentication/kerberos/)
-
-Quanta machines are mainted by the Techsquare group (stultzlab-admin@techsquare.com) and Wangzhi. Message him on slack for questions regarding to the server.
-
-**Home Directories**
-
-The home directories `/storage/user_name` of the training and inference server are shared. (The home directory on the training server is mounted to the infernece server with NFS)
-
-You can define your own `.bashrc` in your home directory (e.g. for aliases)
-
-There's no home directories on the storage server. The storage server is mounted to the training and inference servers at `/storage/remote/`.
-
-**Jupyter Notebook**
-
-There is an alias to run jupyter notebook on all Quanta servers: `jpt $port_num`. E.g. type `jpt 8880` will open a jupyter notebook at port 8880. You can listen to the port from your local machine with ssh
-
-`ssh -N -f -L localhost:8880:localhost:8880 user_name@host_name`.
-
-To make life easier, you can define a local alias function (syntax might be different if you're not using bash for your shell.)
-```
-function jptt(){
-    # Forwards port $1 into port $2 and listens to it, specify which server in $3
-    # e.g. jptt 8880 8880 3 would forward port 8880 on stultzlab03 to local port 8880
-    ssh -N -f -L localhost:$2:localhost:$1 user_name@stultzlab0$3.csail.mit.edu
-}
-```
-This trick can also be used for tensorboard.
-
-**Conda**
-
-There is a miniconda installed in `/opt/miniconda`, all users in the group `data` have write permissions to it. Enviroments created here will be accesible to all users. To check if your are in the `data` group, type `id`.
-
-You can also install your own conda in your home directory and add it to `PATH` in your `.bashrc`.
-
-**Other tips**
-
-Use `screen` or `tmux` to keep processes running after ending ssh session.
-
-Use `sshfs` to mount remote filesystem to local machine. Read more about [sshfs](https://github.com/libfuse/sshfs)
-
-`gpustat` and `htop` give gpu, cpu and memory usage.
-
-**Solving Common Problems on CSAIL Server**
-I cannot access to server and seems like it is down:
-Whoever spotted this first should email [techsquare stultzlab admin](stultzlab-admin@techsquare.com) to reboot the server and let others know about this (message on slack cluster-issues channel)
-
-Other Problems: Check if a solution can be found at the following resources: 
-    * Storage problems: 
-        * https://tig.csail.mit.edu/data-storage/nfs/faq/ 
-        * https://tig.csail.mit.edu/data-storage/afs/
-* Access problems: 
-    * https://tig.csail.mit.edu/network-wireless/ssh/ 
-* Email help@csail.mit.edu 
-
-### Anduril
-We have a workstation `anduril` at MGH with four Nvidia RTX 8000 GPUs.
-This machine is for working with PHI.
-To access `anduril`, you must be onboarded at MGH (see below), have VPN access, and be added to the appropriate IRB.
-Ridwan is the admin for `anduril`. Message him on Slack with a screenshot from Insight (MGH IRB website) demonstrating you are covered by an IRB, and ask him to create an account for you.
+### [Server User Guide]()
+### [Server Admin Guide]()
 
 ## code
 [mit-ccrg/ml4c3-mirror](https://github.com/mit-ccrg/ml4c3-mirror) is a mirror of
