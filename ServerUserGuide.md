@@ -42,11 +42,16 @@ By default, CSAIL rejects all incoming ssh traffic.
 There are two ways to ssh into the server
 1. Log into an MIT VPN first then ssh into the server
 2. Use the jump host (recommended)
-	- First set about the Kerberos Authentication on your local machine
+	- First set the [Kerberos Authentication](https://tig.csail.mit.edu/accounts-authentication/kerberos/) on your local machine
 	- Then follow guide here 
 		- Mac OS (https://tig.csail.mit.edu/operating-systems/macos/ssh-on-macos/)
 		- Windows (https://tig.csail.mit.edu/operating-systems/windows/ssh-on-windows/)
 		- Linux (https://tig.csail.mit.edu/operating-systems/csail-ubuntu/kerberos-gnu-linux/)
+
+**Debugging ssh error**
+- `ping` the servers to see if they are off
+- `ssh` into `login.csail.mit.edu` to see if there's a problem with your csail account
+- `ssh` into the servers from the csail login node to see if there's a problem with the server allow list
 
 ### Home Directories
 
