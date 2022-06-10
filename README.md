@@ -43,8 +43,8 @@ Data are documented in various sources. Here is a directory:
 
 ## compute
 
-### [Server User Guide]()
-### [Server Admin Guide]()
+### [Server User Guide](https://github.com/mit-ccrg/mit-ccrg/blob/master/ServerUserGuide.md)
+### [Server Admin Guide](https://github.com/mit-ccrg/mit-ccrg/blob/master/ServerAdminGuide.md)
 
 ## code
 [mit-ccrg/ml4c3-mirror](https://github.com/mit-ccrg/ml4c3-mirror) is a mirror of
