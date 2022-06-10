@@ -2,14 +2,19 @@
 ## Anduril
 We have a workstation `anduril` at MGH with four Nvidia RTX 8000 GPUs. This machine is for working with PHI.
 To access `anduril`, you must be onboarded at MGH, have VPN access, and be added to the appropriate IRB.
-Ridwan and Hyewon are the admin for `anduril`. Message them on Slack with a screenshot from Insight (MGH IRB website) demonstrating you are covered by an IRB, and ask him to create an account for you.
+
+Ridwan and Hyewon are the admin for `anduril`. Message them on Slack with a screenshot from Insight (MGH IRB website) demonstrating you are covered by an IRB, and ask them to create an account for you.
+
 ### ssh access
 To access `anduril`, first connect to the Partner's VPN. Then `ssh username@anduril`.
+
 Please change your default password when you log in for the first time.
+
 ### Storage
 The `home` directory on `anduril` is not meant for data storage.
 Data should be put in `/storage` (14TB SSD) or `/storage2` (12TB HDD)
 For cold storage, we have a NAS mounted under `/media/nebula-storage/`
+
 ### Dropbox
 To set up Dropbox, follow the instructions at
 https://github.com/aguirre-lab/aguirre-lab/blob/master/dropbox.md
