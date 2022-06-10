@@ -20,8 +20,7 @@ Deleting unused account
 ### Admin
 Hyewon, Techsquare (stultzlab-admin@techsquare.com)
 ### Sudo access
-Hyewon, Aniruddh, Daphne
-Edit `/etc/sudoers.d/12_local_sudo` for sudo access
+Hyewon, Aniruddh, Daphne has sudo access. For adding future sudoer, you can edit `/etc/sudoers.d/12_local_sudo` for sudo access
 
 ### User access
 Individual user `/etc/csail/users.allow`
