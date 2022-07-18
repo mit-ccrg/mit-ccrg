@@ -8,12 +8,12 @@ Ridwan and Hyewon are the admin for `anduril`. Message them on Slack with a scre
 ### ssh access
 To access `anduril`, first connect to the Partner's VPN. Then `ssh username@anduril`. 
 
-Likewise, to access `anduril`, first connect to the Partner's VPN. Then `ssh username@anduril`.
+Likewise, to access `narsil`, first connect to the Partner's VPN. Then `ssh username@narsil`.
 
 Please change your default password when you log in for the first time.
 
 ### environment
-Due to storage issuse, please *do not install conda* into `anduril` and `narsil`. Instead, use the command `source /home/stultzlab/miniconda3/bin/activate` to activate the miniconda environment and create your environment under this miniconda3. Below is information copied from Aguirre Lab info page. 
+Due to storage issuse, please *do not install conda* into `anduril` and `narsil`. Instead, use the command `source /home/stultzlab/miniconda3/bin/activate` to activate the miniconda environment and create your environment under this miniconda3. Below is information copied from [Aguirre Lab environment info page](https://github.com/aguirre-lab/aguirre-lab/blob/master/miniconda.md). 
 
 Your console prompt should now be prepended by (base).
 Create an environment from your environment.yml config file. My `dotfiles` repo contains an example `environment.yml` named `er`. It contains Python 3.8, Numpy, Pandas, h5py, Jupyter Lab, and other packages I use across projects. You are free to copy and use it as helpful.
