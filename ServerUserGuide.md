@@ -1,14 +1,42 @@
 # Server User Guide
-## Anduril
-We have a workstation `anduril` at MGH with four Nvidia RTX 8000 GPUs. This machine is for working with PHI.
-To access `anduril`, you must be onboarded at MGH, have VPN access, and be added to the appropriate IRB.
+## Anduril/Narsil
+We have a workstation `anduril` and `narsil` at MGH with four Nvidia RTX 8000 GPUs (`anduril`) and three RTX A6000 GPUs (`narsil`). This machine is for working with PHI.
+To access `anduril` and `narsil`, you must be onboarded at MGH, have VPN access, and be added to the appropriate IRB.
 
 Ridwan and Hyewon are the admin for `anduril`. Message them on Slack with a screenshot from Insight (MGH IRB website) demonstrating you are covered by an IRB, and ask them to create an account for you.
 
 ### ssh access
-To access `anduril`, first connect to the Partner's VPN. Then `ssh username@anduril`.
+To access `anduril`, first connect to the Partner's VPN. Then `ssh username@anduril`. 
+
+Likewise, to access `anduril`, first connect to the Partner's VPN. Then `ssh username@anduril`.
 
 Please change your default password when you log in for the first time.
+
+### environment
+Due to storage issuse, please *do not install conda* into `anduril` and `narsil`. Instead, use the command `source /home/stultzlab/miniconda3/bin/activate` to activate the miniconda environment and create your environment under this miniconda3. Below is information copied from Aguirre Lab info page. 
+
+Your console prompt should now be prepended by (base).
+Create an environment from your environment.yml config file. My `dotfiles` repo contains an example `environment.yml` named `er`. It contains Python 3.8, Numpy, Pandas, h5py, Jupyter Lab, and other packages I use across projects. You are free to copy and use it as helpful.
+Project repos may contain an `environment.yml`, or you can create an environment with commands.
+```
+$ conda env create -f environment.yml
+$ conda activate er
+```
+
+Your prompt should now be prepended by the environment name; if you use my `environment.yml`, the prompt is now prepended by `(er)`.
+Update your `zsh` shell config `.zshrc` so new shell instances have the path to Conda:
+```
+(er) $ conda init zsh
+```
+
+Check to ensure your path has the miniconda environment version of Python, and that the version is correct:
+```
+(er) $ which python
+/home/aguirrelab/miniconda3/envs/er/bin/python
+  
+(er) $ python --version
+Python 3.8.5
+```
 
 ### Storage
 The `home` directory on `anduril` is not meant for data storage.
