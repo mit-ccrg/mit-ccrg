@@ -1,6 +1,6 @@
 # Server User Guide
 ## Anduril/Narsil
-We have a workstation `anduril` and `narsil` at MGH with four Nvidia RTX 8000 GPUs (`anduril`) and three RTX A6000 GPUs (`narsil`). This machine is for working with PHI.
+We have a workstation `anduril` and `narsil` at MGH with four Nvidia RTX 8000 GPUs (`anduril`) and three RTX A6000 GPUs (`narsil`). This machine is for working with PHI. NVIDIA driver for `anduril` has re-installed 09/07/22 due to NVIDIA-SMI failed error through the command `sudo apt install nvidia-driver-470`. 
 To access `anduril` and `narsil`, you must be onboarded at MGH, have VPN access, and be added to the appropriate IRB.
 
 Ridwan and Hyewon are the admin for `anduril`. Message them on Slack with a screenshot from Insight (MGH IRB website) demonstrating you are covered by an IRB, and ask them to create an account for you.
