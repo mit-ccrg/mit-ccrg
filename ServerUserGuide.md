@@ -44,8 +44,21 @@ Data should be put in `/storage` (14TB SSD) or `/storage2` (12TB HDD)
 For cold storage, we have a NAS mounted under `/media/nebula-storage/`
 
 ### Dropbox
-To set up Dropbox, follow the instructions at
-https://github.com/aguirre-lab/aguirre-lab/blob/master/dropbox.md
+The first time using dropbox ever, run:
+- `dropbox start -i`\
+to install the dropbox daemon.
+
+After that run `dropbox start` and click the link to sign in to dropbox. This will start downloading the entire dropbox directory which will fill up all storage on the server so run:
+- `dropbox exclude add *`\
+to remove everything from downloading. Then run:
+- `dropbox exclude remove YOUR_FOLDER_PATH`\
+to make your dropbox folder of interest download!
+
+If running `dropbox start` has an error message "Dropbox isn't running! Dropbox is already running!", you need to restart your dropbox daemon. run:
+- `ps aux | grep dropbox`\
+to find the dropbox processes and kill the ones for your user using:
+- `kill <pid>`\
+Now run `dropbox start`!
 
 ## Quanta
 Our main computing environment is the Quanta server at MIT. Quanta has three independent but connected servers that are used mainly for storage, training and inference
