@@ -39,3 +39,27 @@ Edit the user acess files, then ask techsquare to create a new home directory fo
 The training server (`/storage`) is backed up to the storage server weekly. 
 The storage server is also backed up by MIT TSM service.
 The contact person for the TSM service is Hyewon
+
+## Dropbox installation and configuration on linux workstations
+
+Since we connect via ssh to our linux workstations, we install and interact with dropbox via the command line.
+
+### Install
+
+The easiest way to install dropbox is through the dropbox management script. This is a python script that serves as the command line interface for dropbox.
+
+To download the dropbox command line interface:
+```bash
+wget https://linux.dropbox.com/packages/dropbox.py
+chmod +x dropbox.py
+```
+
+To make the dropbox interface available to all users, place the dropbox script in a location common to all user PATHs, like `/usr/local/bin`. This requires `sudo` access:
+```bash
+sudo mv dropbox.py /usr/local/bin/dropbox
+```
+
+To install the actual dropbox service, use the following command:
+```bash
+echo y | dropbox start -i
+```

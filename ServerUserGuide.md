@@ -44,20 +44,44 @@ Data should be put in `/storage` (14TB SSD) or `/storage2` (12TB HDD)
 For cold storage, we have a NAS mounted under `/media/nebula-storage/`
 
 ### Dropbox
-The first time using dropbox ever, run:
-- `dropbox start -i`\
-to install the dropbox daemon.
+<!-- The first time using dropbox ever, you must install the dropbox daemon by running:
+```bash
+dropbox start -i
+``` -->
+To sync with your dropbox account, dropbox needs to be configured. The command below should print a dialogue to link the computer to a specific account. Follow the link.
+```bash
+dropbox start
+```
 
-After that run `dropbox start` and click the link to sign in to dropbox. This will start downloading the entire dropbox directory which will fill up all storage on the server so run:
-- `dropbox exclude add *`\
+If you follow the link, it should bring you to a dropbox login page. The most obvious thing is to enter your email in the box that is front and center. **Don't do that.** Using the most obvious box will not work (because why would it, right?). More specifically, because our dropbox accounts are business accounts that use single sign-on (SSO), after you sign it, it redirects you to a page that asks you to input a code into the dropbox installer. However, because we're using the command line interface, there is no installer.
+
+Instead of entering your email in the main box, click the `sign in` option in the top right corner. Enter your MGH email in the prompt that opens. It should bring you to a MGB SSO page where you can sign in with your MGH email and password. It will redirect you back to the account linkage step where you should press `connect`.
+
+You can check if installation was successful or generally check the status of dropbox with:
+```bash
+dropbox status
+```
+
+This will start downloading the entire dropbox directory which will fill up all storage on the server so run:
+```bash
+dropbox exclude add *
+```
 to remove everything from downloading. Then run:
-- `dropbox exclude remove YOUR_FOLDER_PATH`\
+```bash
+dropbox exclude remove YOUR_FOLDER_PATH
+```
 to make your dropbox folder of interest download!
 
-If running `dropbox start` has an error message "Dropbox isn't running! Dropbox is already running!", you need to restart your dropbox daemon. run:
-- `ps aux | grep dropbox`\
+#### Error starting Dropbox
+If running 
+```dropbox start``` has an error message "Dropbox isn't running! Dropbox is already running!", you need to restart your dropbox daemon. run:
+```bash
+ps aux | grep dropbox
+```
 to find the dropbox processes and kill the ones for your user using:
-- `kill <pid>`\
+```bash
+kill <pid>
+```
 Now run `dropbox start`!
 
 ## Quanta
