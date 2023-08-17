@@ -14,7 +14,8 @@ For shared folders, e.g. `/storage/shared`, user and group owner should be `stul
 All users should be added to the `stultzlab` group
 Deleting unused account
 `sudo userdel -r $USERNAME`. This will also delete the home directory, so be careful.
-
+### Mounting Device
+For mounting additional hard drive and SSD, use and modify this [shell file](./server_scripts/mount_nebula.sh) used for mounting nebula.
 
 ## Quanta
 ### Admin
