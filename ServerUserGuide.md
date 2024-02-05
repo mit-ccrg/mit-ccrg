@@ -113,6 +113,36 @@ There are two ways to ssh into the server
 		- Windows (https://tig.csail.mit.edu/operating-systems/windows/ssh-on-windows/)
 		- Linux (https://tig.csail.mit.edu/operating-systems/csail-ubuntu/kerberos-gnu-linux/)
 
+
+#### Configuring SSH Aliases for Quanta Machines on macOS and Linux local machines:
+After setting up Kerberos Authentication, you can streamline your SSH access to Quanta machines by adding aliases to your SSH configuration. Your local machines SSH configuration is usually located in the file `~/.ssh/config`. Open the config file with your preferred text editor. You will add several entries under specific hosts to define your SSH aliases and use the CSAIL jump host (as recommended by TIG). Below is the content you should add. Be sure to replace `<USERNAME>` with your actual Quanta username.
+```bash
+Host jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  VerifyHostKeyDNS yes
+  User <USERNAME>
+Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+  ProxyCommand ssh -W %h:%p jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
+  User <USERNAME>
+Host *stultz *healthyml
+  ProxyCommand ssh -W %h:%p jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
+Host stultzlab01
+  HostName stultzlab01.csail.mit.edu
+  User <USERNAME>
+Host stultzlab02
+  HostName stultzlab02.csail.mit.edu
+  User <USERNAME>
+Host stultzlab03
+  HostName stultzlab03.csail.mit.edu
+  User <USERNAME>
+```
+
+Once you've added the above configuration, you can SSH into stultzlab machines using a simplified command. For example, to connect to stultzlab01, run: `ssh stultzlab01`
+
 **Debugging ssh error**
 - `ping` the servers to see if they are off
 - `ssh` into `login.csail.mit.edu` to see if there's a problem with your csail account
